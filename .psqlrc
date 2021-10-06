@@ -1,0 +1,18 @@
+-- Output query execution time at the end of queries
+\timing
+
+-- use less -E as pager
+\setenv PAGER 'less -E'
+
+-- Show null values as [null]
+\pset null '[null]'
+
+-- Autocomplete keywords in UPPERCASE because I likes it
+\set COMP_KEYWORD_CASE upper
+
+-- Automatically expand to KVP output when the output gets really long
+\x auto
+
+-- Include the hostname in the prompt so I remember which server
+-- I'm connected to (so I don't kill prod)
+\set PROMPT1 '%[%033[1;32m%]%M%[%033[0m%] %n@%/%R%#%x '
